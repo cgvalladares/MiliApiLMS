@@ -19,6 +19,14 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Suscripción de Visual Studio Enterprise - MPN(0a57d53f-a69a-4d13-a93d-21a0fb6be10c)'
+    appType: 'webAppLinux'
+    WebAppName: 'apirest-lms'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    RuntimeStack: 'PYTHON|3.10'
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
