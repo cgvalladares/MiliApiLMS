@@ -1,4 +1,10 @@
-
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Suscripción de Visual Studio Enterprise - MPN(1)(0a57d53f-a69a-4d13-a93d-21a0fb6be10c)'
+    appType: 'webAppLinux'
+    appName: 'apirest-lms'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    runtimeStack: 'PYTHON|3.10'
 trigger:
 - main
 
