@@ -1,12 +1,3 @@
-# Starter pipeline
-- task: AzureAppServiceSettings@1
-  inputs:
-    azureSubscription: 'Suscripción de Visual Studio Enterprise - MPN(0a57d53f-a69a-4d13-a93d-21a0fb6be10c)'
-    appName: 'apirest-lms'
-    resourceGroupName: 'cvalladares_rg_5239'
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
 
 trigger:
 - main
@@ -18,15 +9,3 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- script: |
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Suscripción de Visual Studio Enterprise - MPN(0a57d53f-a69a-4d13-a93d-21a0fb6be10c)'
-    appType: 'webAppLinux'
-    WebAppName: 'apirest-lms'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    RuntimeStack: 'PYTHON|3.10'
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
